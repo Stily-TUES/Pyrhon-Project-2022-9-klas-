@@ -13,21 +13,21 @@ pygame.display.set_caption("Shadow Warrior")
 def loadify(imgname):
     return pygame.image.load(imgname).convert_alpha(screen)
 #Models:
-logo = loadify("textures/logo.png")
+logo = loadify("Project/textures/logo.png")
 pygame.display.set_icon(logo)
-wallModel = loadify("textures/wall.png")
-groundModel = loadify("textures/ground.png")
-weaponModel = loadify("textures/weapon.png")
-enemyBullet = loadify("textures/bullet.png")
-playerBullet = loadify("textures/enemyBullet.png")
-crosshair = loadify("textures/crosshair.png")
+wallModel = loadify("Project/textures/wall.png")
+groundModel = loadify("Project/textures/ground.png")
+weaponModel = loadify("Project/textures/weapon.png")
+enemyBullet = loadify("Project/textures/bullet.png")
+playerBullet = loadify("Project/textures/enemyBullet.png")
+crosshair = loadify("Project/textures/crosshair.png")
 
-playerWalkAnimR = [loadify("textures\walk0.png"),
-loadify("textures\walk1.png"),
-loadify("textures\walk2.png")]
-playerWalkAnimL = [loadify("textures\walk3.png"),
-loadify("textures\walk4.png"),
-loadify("textures\walk5.png")]
+playerWalkAnimR = [loadify("Project/textures\walk0.png"),
+loadify("Project/textures\walk1.png"),
+loadify("Project/textures\walk2.png")]
+playerWalkAnimL = [loadify("Project/textures\walk3.png"),
+loadify("Project/textures\walk4.png"),
+loadify("Project/textures\walk5.png")]
 
 
 pygame.mouse.set_visible(False)
@@ -106,10 +106,10 @@ class slimeEnemy:
         self.x = x
         self.y = y
         self.bulletSpeed = 1
-        self.aliveAnimations = [loadify("textures\slime_animation_0.png"),
-        loadify("textures\slime_animation_1.png"),
-        loadify("textures\slime_animation_2.png"),
-        loadify("textures\slime_animation_3.png"),]
+        self.aliveAnimations = [loadify("Project/textures\slime_animation_0.png"),
+        loadify("Project/textures\slime_animation_1.png"),
+        loadify("Project/textures\slime_animation_2.png"),
+        loadify("Project/textures\slime_animation_3.png"),]
         self.animationsCount = 0
         self.attackRate = 60
         self.resetOffset = 0
@@ -332,7 +332,7 @@ def Text(type):
             pygame.quit()
             break
 
-loadMapFromFile('maps/Map0.txt')
+loadMapFromFile('Project/maps/Map0.txt')
 hitCooldown = 40
 cooldown = 300
 lastLevel = 9
@@ -447,7 +447,7 @@ while running:
                     Text(2)
                     time.sleep(5)
                     break
-                loadMapFromFile("maps\Map{0}.txt".format(level+1))
+                loadMapFromFile("Project/maps\Map{0}.txt".format(level+1))
                 level+=1
                 player.getRandBuff()
                 
