@@ -161,7 +161,7 @@ class slimeEnemy:
         self.healthBar()
     
     def attack(self):
-        for i in range(random.randint(3, 6)):
+        for i in range(random.randint(3, 5)):
             angle = random.randrange(0, 360)
             bulletSpeed_x = self.bulletSpeed * math.cos(angle) + random.uniform(-5, 5) + level/10
             bulletSpeed_y = self.bulletSpeed * math.sin(angle) + random.uniform(-5, 5) + level/10
@@ -310,7 +310,7 @@ def loadMapFromFile(path):
                     player.x = x * tileSize
                     player.y = y * tileSize
                 elif char == 'e' or char == 'E':
-                    if random.randint(1, 100) <= 60:
+                    if random.randint(1, 100) <= 40:
                         enemyLocations.append((x * tileSize, y * tileSize))
                 x += 1
             y += 1
